@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import java.sql.Date; //一定要导入这个Date！！
 
 @Data
-@TableName("article")  //user对应数据库中的表
+@TableName("article")  //对应数据库中的article表
 public class Article {
 
     private Long id;
@@ -26,15 +26,14 @@ public class Article {
     /**
      * 内容id
      */
-    private Long contentId;
+    private Long bodyId;
     /**
      *类别id
      */
     private Long categoryId;
 
-    private Long tagId;
     /**
-     * 创建时间
+     * 创建时间,自动填充时间
      */
     @TableField(fill = FieldFill.INSERT)
     private Date createTime;
