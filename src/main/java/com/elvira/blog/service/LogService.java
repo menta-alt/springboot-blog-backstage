@@ -17,4 +17,6 @@ public interface LogService {
      * @Return Result
      */
     Result getLogs();
+
+    Result deleteLogById(Long logId);
 }

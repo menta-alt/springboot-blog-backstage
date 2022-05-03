@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/logs")
 public class LogController {
     @Autowired
     private LogService logService;
@@ -17,7 +16,7 @@ public class LogController {
      * @Params:
      * @Return
      */
-    @PostMapping("/publish")
+    @PostMapping("/logs/publish")
     public Result publish(@RequestBody LogParams logParams){
         return logService.publish(logParams);
     }
@@ -25,8 +24,18 @@ public class LogController {
     /**
      * 获取日志列表
      */
-    @GetMapping
+    @GetMapping("/logs")
     public Result logsList(){
         return logService.getLogs();
+    }
+
+    /**
+     * 删除指定日志
+     * @Params:
+     * @Return
+     */
+    @PostMapping("/content/log/{id}")
+    public Result deletelogById(@PathVariable("id") Long logId){
+        return logService.deleteLogById(logId);
     }
 }

@@ -18,4 +18,20 @@ public interface CategoryService {
      * @Return Result
      */
     Result getCategory();
+
+    /**
+     * 获取指定id的专栏名字
+     * @Params:
+     * @Return
+     */
+    Result getCategoryName(Long categoryId);
+
+    /**
+     * 根据指定id删除专栏
+     * @Params:
+     * @Return
+     */
+    Result deleteCategoryById(Long categoryId);
+
+
 }

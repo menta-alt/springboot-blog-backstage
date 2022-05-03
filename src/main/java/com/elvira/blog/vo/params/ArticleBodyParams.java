@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class ArticleBodyParams {
+
     // markdown 源码
     private String content;
 

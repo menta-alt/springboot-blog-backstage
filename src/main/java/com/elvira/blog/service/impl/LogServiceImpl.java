@@ -34,7 +34,14 @@ public class LogServiceImpl implements LogService {
     @Override
     public Result getLogs() {
         LambdaQueryWrapper<Log> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.orderByDesc(Log::getCreateTime);
         List<Log> logs = logMapper.selectList(queryWrapper);
         return Result.success(logs);
+    }
+
+    @Override
+    public Result deleteLogById(Long logId) {
+        logMapper.deleteById(logId);
+        return Result.success(null);
     }
 }

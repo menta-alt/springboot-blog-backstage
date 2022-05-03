@@ -1,23 +1,23 @@
 package com.elvira.blog.vo.params;
 
-import com.elvira.blog.vo.CategoryVo;
-import com.elvira.blog.vo.TagVo;
+import com.elvira.blog.pojo.Category;
+import com.elvira.blog.pojo.Tag;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
 public class ArticleParams {
+    private Long articleId;
 
-    private Long id;
+    private String title;
 
     private ArticleBodyParams body;
 
-    private CategoryVo category;
+    private String categoryName;
 
     private String summary;
 
-    private List<TagVo> tags;
+    private List<String> tagsName;
 
-    private String title;
 }
